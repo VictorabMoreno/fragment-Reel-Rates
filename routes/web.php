@@ -16,3 +16,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return 'O app está funcionando';
 });
+
+Route::get('/example', [ExampleController::class, 'getJson']);
+
+
+Route::middleware('token.auth')->group(function () {
+   ///Rotas não disponíveis nessa versão de visualização
+});
